@@ -9,10 +9,60 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0B1215;
     --foreground: #ededed;
   }
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #4b5563 #19282e; /* Couleurs personnalisées pour Firefox */
+}
+
+/* Webkit (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563; /* Couleur du thumb */
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #19282e; /* Couleur de la piste */
+}
+
+.rotate-360 {
+  transform: rotate(360deg);
+}
+
+.markdown-content pre {
+  background-color: #282c34; /* Dark background */
+  color: #abb2bf; /* Light text color */
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown-content code {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Customize highlight colors (this varies by theme) */
+.markdown-content .hljs-keyword {
+  color: #c678dd;
+}
+
+.markdown-content .hljs-string {
+  color: #98c379;
+}
+
+.markdown-content .hljs-number {
+  color: #d19a66;
+}
+
 
 body {
   color: var(--foreground);
