@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image';
+import { CopySVG } from "./Svg";
 
 const CopyButton = ({ textToCopy }) => {
   const [copied, setCopied] = useState(false);
@@ -15,15 +16,9 @@ const CopyButton = ({ textToCopy }) => {
 
   return (
     <div>
-        <div className="p-1 rounded-full shadow-lg opacity-50 hover:opacity-100 transition duration-200">
-        <button onClick={handleCopy} className="hover:text-orange-500">
-            <Image
-                src="/copy.svg"
-                alt="copy icon"
-                width={15}
-                height={15}
-                className=" transition duration-200 text-orange-500"
-            />
+        <div className="flex w-6 h-6 p-1 opacity-50 hover:opacity-100 transition duration-200">
+        <button onClick={handleCopy} className="transition duration-200">
+            {!copied && (<CopySVG color="var(--foreground)"/>) || (<p className="text-foreground text-xs">Copied!</p>)}
         </button>
         </div>
     </div>

@@ -14,13 +14,14 @@ export default function InputArea({ input, setInput, sendMessage }) {
 
   return (
     <div className="absolute bottom-0 inset-x-0 p-4 z-10 w-full">
-      <div className="flex w-full md:w-[40%] mx-auto space-x-2 rounded-3xl p-2 bg-gray-800 border border-gray-400">
+      <div className="flex w-full md:w-[55%] mx-auto space-x-2 rounded-3xl p-2 shadow-lg bg-slate-100 dark:bg-gray-800 border border-slate-600 dark:border-gray-400">
         <textarea
           ref={textareaRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyUp={(e) => e.key === "Enter" && !e.shiftKey && sendMessage()}
           placeholder="How can I assist you today?"
-          className="flex-1 bg-transparent py-2 focus:outline-none text-white ml-2 resize-none overflow-y-auto custom-scrollbar"
+          className="flex-1 bg-transparent py-2 focus:outline-none ml-2 resize-none overflow-y-auto custom-scrollbar"
           rows={1}
         />
         <div className="flex justify-center">
@@ -31,7 +32,7 @@ export default function InputArea({ input, setInput, sendMessage }) {
             </button>
         </div>
       </div>
-      <p className="w-full text-center text-[10px] md:text-xs text-gray-300 p-1">Mistral AI may make mistakes. Consider verifying important information.</p>
+      <p className="w-full text-center text-[10px] md:text-xs text-gray-700 dark:text-gray-300 p-1">Mistral AI may make mistakes. Consider verifying important information.</p>
     </div>
   );
 }

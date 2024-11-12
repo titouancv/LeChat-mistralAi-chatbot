@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image';
+import { ReloadSVG } from "./Svg";
 
 const ReloadButton = ({ reload, content }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -13,16 +14,10 @@ const handleReload = () => {
 
   return (
     <div>
-        <div className="p-1 rounded-full shadow-lg opacity-50 hover:opacity-100 transition duration-200">
-        <button className="hover:text-orange-500" onClick={handleReload}>
-            <Image
-                src="/reload.svg"
-                alt="reload icon"
-                width={15}
-                height={15}
-                className={`transition-transform duration-500 ${isFlipped ? 'rotate-360' : ''}`}
-            />
-        </button>
+        <div className="p-1 flex w-6 h-6 opacity-50 hover:opacity-100 transition duration-200">
+          <button className={`hover:text-orange-500 transition-transform duration-500 ${isFlipped ? 'rotate-360' : ''}`} onClick={handleReload}>
+            <ReloadSVG color="var(--foreground)" />
+          </button>
         </div>
     </div>
   );

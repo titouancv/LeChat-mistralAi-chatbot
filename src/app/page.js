@@ -1,6 +1,5 @@
 "use client";
 
-import { Mistral } from '@mistralai/mistralai';
 import { useState, useRef, useEffect } from "react";
 import Image from 'next/image';
 import InputArea from './components/InputArea';
@@ -127,8 +126,8 @@ export default function Home() {
             <Image
             src="/MistralAiBarColorRotate.png"
             alt="Logo Mistral AI blur"
-            width={300}
-            height={700}
+            width={900}
+            height={200}
             className='rotate-180'
             />
           </div>
@@ -139,7 +138,7 @@ export default function Home() {
           >
             {messages.length === 0 && (
               <div className='h-full w-full flex justify-center items-center'>
-                <h1 className='font-bold text-center text-2xl md:text-3xl text-white'>Hello, welcome on Le Chat!</h1>
+                <h1 className='font-bold text-center text-2xl md:text-3xl'>Hello, welcome on Le Chat!</h1>
               </div>
             ) || (
               <div className='flex-col justify-center w-[95%] md:w-3/4'>

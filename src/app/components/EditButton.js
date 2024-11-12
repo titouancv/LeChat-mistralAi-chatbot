@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from 'next/image';
+import { EditSVG } from "./Svg";
 
 const EditButton = ({setIsEditing}) => {
 
@@ -9,15 +10,9 @@ const EditButton = ({setIsEditing}) => {
 
   return (
     <div>
-        <div className="p-1 rounded-full shadow-lg opacity-50 hover:opacity-100 transition duration-200">
+        <div className="flex w-6 h-6 p-1 opacity-50 hover:opacity-100 transition duration-200">
         <button onClick={handleEdit} className="">
-            <Image
-                src="/edit.svg"
-                alt="edit icon"
-                width={15}
-                height={15}
-                className=""
-            />
+            <EditSVG color="var(--foreground)"/>
         </button>
         </div>
     </div>

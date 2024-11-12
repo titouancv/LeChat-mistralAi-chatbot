@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf5f3;
+  --foreground: #0B1215;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,9 +14,13 @@
   }
 }
 
+svg {
+  fill: var(--foreground);
+}
+
 .custom-scrollbar {
   scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #4b5563 #19282e; /* Couleurs personnalisées pour Firefox */
+  scrollbar-color: #f97316 rgba(25, 40, 46, 0); /* Couleurs personnalisées pour Firefox */
 }
 
 /* Webkit (Chrome, Safari) */
@@ -31,7 +35,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #19282e; /* Couleur de la piste */
+  background: rgba(25, 40, 46, 0); /* Couleur de la piste */
 }
 
 .rotate-360 {
@@ -61,6 +65,18 @@
 
 .markdown-content .hljs-number {
   color: #d19a66;
+}
+
+.markdown-content p {
+  margin-bottom: 1.5rem;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: 1rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
 }
 
 
