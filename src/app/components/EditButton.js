@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Image from 'next/image';
 import { EditSVG } from "./Svg";
 
 const EditButton = ({setIsEditing}) => {

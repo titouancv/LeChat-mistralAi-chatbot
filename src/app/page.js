@@ -39,7 +39,7 @@ export default function Home() {
     scrollToBottom();
   }, [messages]);
 
-
+  // Call the API with the new edited message
   const editMessage = async (targetContent, newContent) => {
     let newMessages = messages
     const lastIndex = newMessages.map(msg => msg.content).lastIndexOf(targetContent);
@@ -61,7 +61,7 @@ export default function Home() {
     }
   };
 
-
+  // Call the API with the same message to get a new answer
   const reloadMessage = async (targetContent) => {
     let newMessages = messages
     const lastIndex = newMessages.map(msg => msg.content).lastIndexOf(targetContent);
@@ -85,7 +85,7 @@ export default function Home() {
     }
   };
 
-
+  // Call the API with a new message
   const sendMessage = async () => {
     if (!input.trim()) return;
     const userMessage = { role: "user", content: input };

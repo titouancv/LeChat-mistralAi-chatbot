@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { SendSVG } from './Svg';
 
 export default function ScrollToBottomButton({ scrollToBottom }) {

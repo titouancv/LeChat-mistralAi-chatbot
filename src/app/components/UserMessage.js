@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import CopyButton from './CopyButton';
-import Image from 'next/image';
 import ReloadButton from './ReloadButton';
 import EditButton from './EditButton';
-import { CancelSVG, SendSVG } from './Svg';
 
 
 export default function UserMessage({content, reloadMessage, editMessage}) {
@@ -11,14 +9,12 @@ export default function UserMessage({content, reloadMessage, editMessage}) {
     const [editableContent, setEditableContent] = useState(content);
     const messagetextareaRef = useRef(null);
 
+    // Call the reload function in the parent component
     const reload = () => {
         reloadMessage(content);
     };
 
-    const handleContentChange = (e) => {
-        setEditableContent(e.target.value);
-    };
-
+    // Call the edit function in the parent component
     const saveEdit = () => {
         if(editableContent){
             setIsEditing(false);
@@ -26,11 +22,13 @@ export default function UserMessage({content, reloadMessage, editMessage}) {
         }
     };
 
+    // Return to the original message
     const cancelEdit = () => {
         setIsEditing(false);
         setEditableContent(content);
     };
 
+    // Adjust the size of textarea
     useEffect(() => {
         if (messagetextareaRef.current) {
             messagetextareaRef.current.style.height = "auto";

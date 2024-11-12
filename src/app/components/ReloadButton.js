@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from 'next/image';
 import { ReloadSVG } from "./Svg";
 
 const ReloadButton = ({ reload, content }) => {
